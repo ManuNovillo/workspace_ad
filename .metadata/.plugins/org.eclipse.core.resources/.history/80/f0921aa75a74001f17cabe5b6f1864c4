@@ -1,0 +1,44 @@
+package model;
+
+public class Dia {
+	String timeFrom;
+	String timeTo;
+	String symbolame;
+	String precipitationProb;
+	String tempMax;
+	String tempMin;
+	public Dia(String timeFrom, String timeTo, String symbolame, String precipitationProb, String tempMax,
+			String tempMin) {
+		this.timeFrom = timeFrom;
+		this.timeTo = timeTo;
+		this.symbolame = symbolame;
+		this.precipitationProb = precipitationProb;
+		this.tempMax = tempMax;
+		this.tempMin = tempMin;
+	}
+	
+	public String getTimeFrom() {
+		return timeFrom;
+	}
+	
+	public String getTimeTo() {
+		return timeTo;
+	}
+	
+	public String getSymbolame() {
+		return symbolame;
+	}
+	
+	public String getPrecipitationProb() {
+		return precipitationProb;
+	}
+	
+	public String getTempMax() {
+		return tempMax;
+	}
+	
+	public String getTempMin() {
+		return tempMin;
+	}
+	
+}

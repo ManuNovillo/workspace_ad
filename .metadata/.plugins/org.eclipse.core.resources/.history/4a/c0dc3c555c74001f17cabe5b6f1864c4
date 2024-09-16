@@ -1,0 +1,15 @@
+package main;
+
+import model.Dia;
+import parser.OpenWeather;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for (Dia dia : OpenWeather.getForecast()) {
+			System.out.println(dia);
+		}
+	}
+
+}
