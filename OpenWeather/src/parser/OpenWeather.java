@@ -24,7 +24,8 @@ public class OpenWeather {
 			String precipitationProb = getAttribute(time, "precipitation", "probability");
 			String tempMax = getAttribute(time, "temperature", "max");
 			String tempMin = getAttribute(time, "temperature", "min");
-			forecast.add(new Dia(timeFrom, timeTo, symbolName, precipitationProb, tempMax, tempMin));
+			String codigo = getAttribute(time, "symbol", "var");
+			forecast.add(new Dia(timeFrom, timeTo, symbolName, precipitationProb, tempMax, tempMin, codigo));
 		}
 		
 		return forecast;
