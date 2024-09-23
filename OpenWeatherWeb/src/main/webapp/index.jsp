@@ -35,13 +35,14 @@
                  <div class="col-6">
                         <div class="card mb-3 mt-5" style="max-width: 540px;">
                             <div class="row g-0">
-                                <div class="col-md-4">
+                                <div class="col-md-4 bg-primary">
                                     <img src="https://openweathermap.org/img/wn/<%= dia.getCodigo() %>@2x.png" class="img-fluid rounded-start"
                                         alt="clima">
                                 </div>
                                 <div class="col-md-8 bg-dark text-white">
                                     <div class="card-body">
-                                        <h4 class="card-title text-white"><%= LocalDateTime.parse(dia.getTimeFrom()).getDayOfWeek() %></h4>
+                                    	<%LocalDateTime time = LocalDateTime.parse(dia.getTimeFrom()); %>
+                                        <h4 class="card-title text-white"><%= time.getDayOfWeek() + " " + time.getHour() + ":00" %></h4>
                                         <p class="card-text">Probabilidad de precipitación: <span class="text-primary"><%= Double.parseDouble(dia.getPrecipitationProb()) * 100 %>%</span></p>
                                         <p class="card-text">Nubes: <span class="text-primary"><%= Character.toUpperCase(dia.getSymbolName().charAt(0)) + dia.getSymbolName().substring(1) %></span></p>
                                         <p class="card-text">Temperatura máxima: <span class="text-primary"><%= dia.getTempMax() %></span></p>
