@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <!doctype html>
+    <html lang="es">
+    
+    <head>
+        <title>OpenWeather</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    </head>
+    
+    <body>
+    
+        <header>
+            <div class="container">
+                <!-- place navbar here -->
+                <h1 class="bg-primary text-white text-center">Tiempo en Toledo</h1>
+        </header>
+        <main class="mt-2">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="img-fluid" src="" alt="">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h4>${dia.nombre}</h4>
+                                    <p>Cielo: <span class="text-primary"></span></p>
+                                    <p>Temperatura máxima: <span class="text-danger"></span></p>
+                                    <p>Temperatura mínima: <span class="text-success"></span></p>
+                                    <p>Prob. de precipitación: <span class="text-primary"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- place footer here -->
+            <h1 class="text-white text-center">Manuel Novillo</h1>
+        </footer>
+        </div>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    </body>
+    
+    </html>
