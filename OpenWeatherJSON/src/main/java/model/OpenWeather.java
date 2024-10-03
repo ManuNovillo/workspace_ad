@@ -22,5 +22,4 @@ public class OpenWeather {
 	public String toString() {
 		return "OpenWeather [list=" + list + "]";
 	}
-	
 }
