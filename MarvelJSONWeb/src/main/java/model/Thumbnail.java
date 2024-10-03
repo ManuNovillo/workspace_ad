@@ -1,15 +1,17 @@
 package model;
 
 public class Thumbnail {
-	private String thumbnail;
+	private String path;
 	private String extension;
+	private String picture;
+	
 	public String getThumbnail() {
-		return thumbnail;
+		return path;
 	}
-	public void setThumbnail(String thumbnail) {
-		this.thumbnail = thumbnail;
+	public void setPath(String thumbnail) {
+		this.path = thumbnail;
 	}
-	public String getExtension() {
+	public String getPath() {
 		return extension;
 	}
 	public void setExtension(String extension) {
@@ -17,7 +19,11 @@ public class Thumbnail {
 	}
 	@Override
 	public String toString() {
-		return "Thumbnail [thumbnail=" + thumbnail + ", extension=" + extension + "]";
+		return "Thumbnail [path=" + path + ", extension=" + extension + "]";
+	}
+	
+	public String getPicture() {
+		return path + "." + extension;
 	}
 	
 	

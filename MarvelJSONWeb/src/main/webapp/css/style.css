@@ -1,0 +1,11 @@
+.fondo-marvel {
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.opacity-90 {
+    opacity: 0.9;
+}
