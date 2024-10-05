@@ -5,6 +5,7 @@ public class Personaje {
 	private String description;
 	private Thumbnail thumbnail;
 	private Comics comics;
+	private int id;
 	
 	public String getName() {
 		return name;
@@ -15,7 +16,7 @@ public class Personaje {
 	}
 	
 	public String getDescription() {
-		if (description.equals("")) return "Sin descripción disponible";
+		if (description.equals("")) return "Descripción no disponible";
 		return description;
 	}
 	
@@ -40,8 +41,16 @@ public class Personaje {
 	}
 	@Override
 	public String toString() {
-		return "Personaje [name=" + name + ", description=" + description + ", thumbnail=" + thumbnail + ", comics="
+		return "Personaje [id=" + id + "name=" + name + ", description=" + description + ", thumbnail=" + thumbnail + ", comics="
 				+ comics + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

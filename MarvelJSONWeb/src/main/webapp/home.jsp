@@ -20,23 +20,33 @@
 	<div class="container opacity-90">
 
 		<header class="text-center bg-black p-4">
-			<!-- place navbar here -->
-			<img class="img-fluid" src="img/logo.png" alt="" width="300">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-4">
+					<img class="img-fluid" src="img/logo.png" alt="" width="300">
+				</div>
+				<div class="col-4">
+					<h1 class="text-white">MARVEL STUDIOS CHARACTERS</h1>
+				</div>
+				<div class="col-4">
+					<h2
+						><a class="text-decoration-none text-white" href="home.jsp">Inicio</a>
+					</h2>
+				</div>
+			</div>
 		</header>
 		<main class="p-3 bg-dark">
 			<div class="row">
 				<c:forEach var="personaje" items="${personajes}">
 					<div class="col-4 d-flex mb-3">
-						<div class="card d-flex border-0 ">
-							<div class="w-100 d-flex h-100">
-								<img class="card-img-top img-fluid"
-									src="${personaje.thumbnail.picture}" alt="Title" />
-							</div>
+					<a href="personaje.jsp?id=${personaje.id}" class="text-decoration-none w-100">
+						<div class="card border-0 w-100">
+							<img class="card-img-top img-fluid" style="height: 400px;"
+								src="${personaje.thumbnail.picture}" alt="Title" />
 							<div class="card-body bg-black">
 								<h4 class="card-title text-white">${personaje.name}</h4>
-								<p class="card-text text-white">${personaje.description}</p>
 							</div>
 						</div>
+					</a>
 					</div>
 				</c:forEach>
 			</div>
@@ -44,6 +54,7 @@
 		<footer class="text-center bg-black p-4">
 			<!-- place footer here -->
 			<h2 class="text-white">&copy; Manuel Novillo Romocea</h2>
+			<a href="#top"><i class="fa fa-arrow-circle-up fa-3x text-danger position-fixed bottom-0 end-0 m-3" aria-hidden="true"></i></a>
 		</footer>
 	</div>
 	<!-- Bootstrap JavaScript Libraries -->
