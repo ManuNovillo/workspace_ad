@@ -21,13 +21,13 @@
 
 		<header class="text-center bg-black p-4">
 			<div class="row justify-content-between align-items-center">
-				<div class="col-4">
+				<div class="col-md-4">
 					<img class="img-fluid" src="img/logo.png" alt="" width="300">
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<h1 class="text-white">MARVEL STUDIOS CHARACTERS</h1>
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<h2
 						><a class="text-decoration-none text-white" href="home.jsp">Inicio</a>
 					</h2>
@@ -37,7 +37,7 @@
 		<main class="p-3 bg-dark">
 			<div class="row">
 				<c:forEach var="personaje" items="${personajes}">
-					<div class="col-4 d-flex mb-3">
+					<div class="col-md-6 col-lg-4 d-flex mb-3">
 					<a href="personaje.jsp?id=${personaje.id}" class="text-decoration-none w-100">
 						<div class="card border-0 w-100">
 							<img class="card-img-top img-fluid" style="height: 400px;"

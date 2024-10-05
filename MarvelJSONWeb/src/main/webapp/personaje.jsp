@@ -25,13 +25,13 @@
 			<div class="container opacity-90 d-flex flex-column flex-grow-1">
 				<header class="text-center bg-black p-4">
 					<div class="row justify-content-between align-items-center">
-						<div class="col-4">
+						<div class="col-md-4">
 							<img class="img-fluid" src="img/logo.png" alt="" width="300">
 						</div>
-						<div class="col-4">
+						<div class="col-md-4">
 							<h1 class="text-white">${personaje.name}</h1>
 						</div>
-						<div class="col-4">
+						<div class="col-md-4">
 							<h2>
 								<a class="text-decoration-none text-white" href="home.jsp">Inicio</a>
 							</h2>
