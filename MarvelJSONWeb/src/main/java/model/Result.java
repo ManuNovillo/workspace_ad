@@ -15,7 +15,5 @@ public class Result {
 	@Override
 	public String toString() {
 		return "Result [data=" + data + "]";
-	}
-
-	
+	}	
 }
