@@ -3589,3 +3589,91 @@
 2024-10-17 12:47:52,577 [Burningwave - Resource releaser] INFO  o.b.c.a.StaticComponentContainer - (StaticComponentContainer.java:430) - Shutting down ThreadSupplier
 2024-10-17 12:48:40,699 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2024-10-17 12:55:41,409 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-10-17 17:39:10,682 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-10-17 17:41:37,348 [Worker-36: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: CaravanJSON:CaravanJSON:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\CaravanJSON\pom.xml.
+2024-10-17 17:41:38,020 [Worker-36: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:38,021 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\CaravanJSON\src\main\resources
+2024-10-17 17:41:38,024 [Worker-36: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:38,024 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\CaravanJSON\src\test\resources
+2024-10-17 17:41:38,415 [Worker-32: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: MarvelJSONWeb:MarvelJSONWeb:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\MarvelJSONWeb\pom.xml.
+2024-10-17 17:41:38,534 [Worker-32: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:38,535 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\MarvelJSONWeb\src\main\resources
+2024-10-17 17:41:38,536 [Worker-32: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:38,537 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\MarvelJSONWeb\src\test\resources
+2024-10-17 17:41:38,632 [Worker-32: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: NBAMasterDetail:NBAMasterDetail:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\NBAMasterDetail\pom.xml.
+2024-10-17 17:41:38,719 [Worker-32: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:38,720 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\NBAMasterDetail\src\main\resources
+2024-10-17 17:41:38,721 [Worker-32: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:38,722 [Worker-32: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\NBAMasterDetail\src\test\resources
+2024-10-17 17:41:39,102 [Worker-31: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: OpenWeatherJSON:OpenWeatherJSON:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherJSON\pom.xml.
+2024-10-17 17:41:39,185 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:39,186 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherJSON\src\main\resources
+2024-10-17 17:41:39,187 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:39,187 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherJSON\src\test\resources
+2024-10-17 17:41:39,246 [Worker-31: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: OpenWeatherSaxJSTL:OpenWeatherSaxJSTL:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherSaxJSTL\pom.xml.
+2024-10-17 17:41:39,287 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:39,288 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherSaxJSTL\src\main\resources
+2024-10-17 17:41:39,289 [Worker-31: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:41:39,290 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherSaxJSTL\src\test\resources
+2024-10-17 17:42:14,152 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-10-17 17:42:14,407 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: CaravanJSON:CaravanJSON:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\CaravanJSON\pom.xml.
+2024-10-17 17:42:14,444 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: MarvelJSONWeb:MarvelJSONWeb:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\MarvelJSONWeb\pom.xml.
+2024-10-17 17:42:14,462 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: NBAMasterDetail:NBAMasterDetail:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\NBAMasterDetail\pom.xml.
+2024-10-17 17:42:14,481 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: OpenWeatherJSON:OpenWeatherJSON:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherJSON\pom.xml.
+2024-10-17 17:42:14,500 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: OpenWeatherSaxJSTL:OpenWeatherSaxJSTL:0.0.1-SNAPSHOT @ C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherSaxJSTL\pom.xml.
+2024-10-17 17:42:14,819 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CaravanJSON/src/main/java
+2024-10-17 17:42:14,821 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CaravanJSON/src/main/resources
+2024-10-17 17:42:14,821 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CaravanJSON/src/test/java
+2024-10-17 17:42:14,822 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CaravanJSON/src/test/resources
+2024-10-17 17:42:14,956 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MarvelJSONWeb/src/main/java
+2024-10-17 17:42:14,957 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MarvelJSONWeb/src/main/resources
+2024-10-17 17:42:14,957 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MarvelJSONWeb/src/test/java
+2024-10-17 17:42:14,957 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MarvelJSONWeb/src/test/resources
+2024-10-17 17:42:15,029 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /NBAMasterDetail/src/main/java
+2024-10-17 17:42:15,030 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /NBAMasterDetail/src/main/resources
+2024-10-17 17:42:15,030 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /NBAMasterDetail/src/test/java
+2024-10-17 17:42:15,030 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /NBAMasterDetail/src/test/resources
+2024-10-17 17:42:15,086 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /OpenWeatherJSON/src/main/java
+2024-10-17 17:42:15,087 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /OpenWeatherJSON/src/main/resources
+2024-10-17 17:42:15,087 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /OpenWeatherJSON/src/test/java
+2024-10-17 17:42:15,087 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /OpenWeatherJSON/src/test/resources
+2024-10-17 17:42:15,154 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /OpenWeatherSaxJSTL/src/main/java
+2024-10-17 17:42:15,155 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /OpenWeatherSaxJSTL/src/main/resources
+2024-10-17 17:42:15,155 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /OpenWeatherSaxJSTL/src/test/java
+2024-10-17 17:42:15,155 [Worker-35: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /OpenWeatherSaxJSTL/src/test/resources
+2024-10-17 17:42:15,272 [Worker-35: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for CaravanJSON
+2024-10-17 17:42:15,291 [Worker-35: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for MarvelJSONWeb
+2024-10-17 17:42:15,306 [Worker-35: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for NBAMasterDetail
+2024-10-17 17:42:15,321 [Worker-35: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for OpenWeatherJSON
+2024-10-17 17:42:15,335 [Worker-35: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for OpenWeatherSaxJSTL
+2024-10-17 17:42:15,341 [Worker-35: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 5 poms: local refresh takes 0,00 sec, refresh facades takes 0,00 sec, update config takes 0,00 sec 
+2024-10-17 17:42:15,489 [Worker-36: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:15,489 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\CaravanJSON\src\main\resources
+2024-10-17 17:42:15,491 [Worker-36: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:15,492 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\CaravanJSON\src\test\resources
+2024-10-17 17:42:15,492 [Worker-36: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of CaravanJSON
+2024-10-17 17:42:15,492 [Worker-36: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for CaravanJSON
+2024-10-17 17:42:15,900 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:15,900 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\MarvelJSONWeb\src\main\resources
+2024-10-17 17:42:15,901 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:15,902 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\MarvelJSONWeb\src\test\resources
+2024-10-17 17:42:15,902 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of MarvelJSONWeb
+2024-10-17 17:42:15,902 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for MarvelJSONWeb
+2024-10-17 17:42:15,939 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:15,940 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\NBAMasterDetail\src\main\resources
+2024-10-17 17:42:15,940 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:15,941 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\NBAMasterDetail\src\test\resources
+2024-10-17 17:42:15,941 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of NBAMasterDetail
+2024-10-17 17:42:15,941 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for NBAMasterDetail
+2024-10-17 17:42:16,225 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:16,226 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherJSON\src\main\resources
+2024-10-17 17:42:16,227 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:16,227 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherJSON\src\test\resources
+2024-10-17 17:42:16,227 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of OpenWeatherJSON
+2024-10-17 17:42:16,227 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for OpenWeatherJSON
+2024-10-17 17:42:16,252 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:16,252 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherSaxJSTL\src\main\resources
+2024-10-17 17:42:16,253 [Worker-25: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-17 17:42:16,254 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\eclipse_jee_workspaces\workspace_ad\OpenWeatherSaxJSTL\src\test\resources
+2024-10-17 17:42:16,254 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of OpenWeatherSaxJSTL
+2024-10-17 17:42:16,254 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for OpenWeatherSaxJSTL
