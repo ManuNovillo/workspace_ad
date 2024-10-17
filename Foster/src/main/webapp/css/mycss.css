@@ -1,0 +1,37 @@
+a {
+    text-decoration: none;
+}
+.text-azul {
+	color: #afc8ff;
+}
+
+.bg-azul {
+    background-color: #171844;
+}
+
+/* 
+    Author     : pacopulido
+*/
+.rating {
+    font-size: 0 ;
+    display: inline-block ;
+}
+.rating a {
+    text-decoration: none ;
+    display: inline-block ;
+    font-size: 32px ;
+    font-size: 2rem ;    
+    color: #888 ;
+}
+.rating:hover a {
+    color: gold ;
+}
+.rating > a:hover ~ a {
+    color: #888 ;
+}
+
+.fondo {
+    background-image: url(../img/fondoplato.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
