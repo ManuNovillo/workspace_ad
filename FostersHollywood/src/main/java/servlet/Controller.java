@@ -1,7 +1,13 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
+import dao.DAOProducto;
+import dao.DAOPunto;
+import dao.DaoCategoria;
+import entities.Categoria;
+import entities.Producto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -34,12 +40,30 @@ public class Controller extends HttpServlet {
 		switch (op) {
 			case "inicio": 
 				// a trabajarrrrr y obtener los datos necesarios para esta opcion
-				
+				List<Categoria> categorias = DaoCategoria.getCategorias(); 
 				// Entregamos a la vista home estos datos en forma de objeto bajo el nombre key
 				// Cuidado con la key!!. En la home habra que utilizarla y llamarla IGUAL IGUAL...
-				session.setAttribute("clave", null);
+				session.setAttribute("categorias", categorias);
 				request.getRequestDispatcher("home.jsp").forward(request, response);
-				break;			
+				break;		
+			case "productos":
+				List<Producto> productos = DAOProducto.getProductos(Integer.parseInt(request.getParameter("categoriaid")));
+				session.setAttribute("productos", productos);
+				request.getRequestDispatcher("productos.jsp").forward(request, response);
+				break;
+			case "detail":
+				String body = request.getParameter("body");
+				String name = request.getParameter("name");
+				String fondo = request.getParameter("fondo");
+				String imagen = request.getParameter("imagen");
+				int media = DAOPunto.getMedia(Integer.parseInt(request.getParameter("id")));
+				session.setAttribute("body", body);
+				session.setAttribute("name", name);
+				session.setAttribute("fondo", fondo);
+				session.setAttribute("imagen", imagen);
+				session.setAttribute("media", media);
+				request.getRequestDispatcher("detail.jsp").forward(request, response);
+				break;
 		}
 
 	}

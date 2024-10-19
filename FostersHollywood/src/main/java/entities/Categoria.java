@@ -1,21 +1,14 @@
 package entities;
 
-import java.util.List;
-
 public class Categoria {
-	
+
 	private int id;
-	private String guarnicion;
-	private String descrpcion;
 	private String nombre;
-	private List<Producto> productos;
-	
-	public Categoria(int id, String guarnicion, String descrpcion, String nombre, List<Producto> productos) {
+
+	public Categoria(int id, String nombre) {
+		super();
 		this.id = id;
-		this.guarnicion = guarnicion;
-		this.descrpcion = descrpcion;
 		this.nombre = nombre;
-		this.productos = productos;
 	}
 
 	public int getId() {
@@ -24,23 +17,7 @@ public class Categoria {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getGuarnicion() {
-		return guarnicion;
-	}
-
-	public void setGuarnicion(String guarnicion) {
-		this.guarnicion = guarnicion;
-	}
-
-	public String getDescrpcion() {
-		return descrpcion;
-	}
-
-	public void setDescrpcion(String descrpcion) {
-		this.descrpcion = descrpcion;
-	}
+		}
 
 	public String getNombre() {
 		return nombre;
@@ -50,15 +27,11 @@ public class Categoria {
 		this.nombre = nombre;
 	}
 
-	public List<Producto> getProductos() {
-		return productos;
+	@Override
+	public String toString() {
+		return "Categoria [id=" + id + ", nombre=" + nombre + "]";
 	}
+	
+	
 
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
-	}
-	
-	
-	
-	
 }
