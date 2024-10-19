@@ -6,9 +6,11 @@ public class Producto {
 	private String body;
 	private String fondo;
 	private String imagen;
-
-	public Producto(String titulo, String body, String fondo, String imagen) {
+	private int id;
+	
+	public Producto(int id, String titulo, String body, String fondo, String imagen) {
 		super();
+		this.id = id;
 		this.titulo = titulo;
 		this.body = body;
 		this.fondo = fondo;
@@ -45,6 +47,14 @@ public class Producto {
 
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

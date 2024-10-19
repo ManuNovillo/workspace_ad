@@ -15,7 +15,7 @@ public class DAOProducto {
 	public static List<Producto> getProductos(int categoriaID) {
 		List<Producto> productos = new ArrayList<>();
 		Connection connection = new Conexion().getConnection();
-		String sentencia = "SELECT titulo, imagen, fondo, body "
+		String sentencia = "SELECT id, titulo, imagen, fondo, body "
 						 + "FROM Producto "
 						 + "WHERE categoriaID = ?";
 		try {
@@ -27,7 +27,8 @@ public class DAOProducto {
 				String imagen = result.getString("imagen");
 				String titulo = result.getString("titulo");
 				String body = result.getString("body");
-				productos.add(new Producto(titulo, body, fondo, imagen));
+				int id = result.getInt("id");
+				productos.add(new Producto(id, titulo, body, fondo, imagen));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
