@@ -1,15 +1,14 @@
 package view;
 
-import java.lang.reflect.InvocationTargetException;
-
+import conexion.Conexion;
 import dao.DAO;
 
 public class Prueba {
 
-	public static void main(String[] args) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException, NoSuchMethodException {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		DAO<Empleado> dao = new DAO<Empleado>();
-		System.out.println(dao.get());
+		System.out.println(DAO.getAll(Categoria.class, Conexion.conecta()));
 	}
-
 }
+
+//.select *, nombres row, Reflexion para crear clase, attrb nombre ro
