@@ -26,30 +26,26 @@
 			<img src="img/logo-white.png" class="img-fluid" alt="logo">
 		</header>
 		<main class="mt-3">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-4">
-					<div class="dropdown">
-						<button class="btn btn-light dropdown-toggle" type="button"
-							id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Marca</button>
-						<div class="dropdown-menu" aria-labelledby="triggerId">
-							<c:forEach var="marca" items="${marcas}">
-								<a class="dropdown-item" href="#">${marca.nombre}</a>
-							</c:forEach>
-						</div>
-					</div>
+					<form action="Controller?op=marca&m" method="post">
+                        <select class="form-select w-100 mb-3" name="marca" onchange="this.form.submit()">
+                            <option selected disabled>Elige marca</option>
+                            <option value="%" selected>Todas</option>
+                            <option value="idmarca">Marca 1</option>
+                        </select>
+                    </form>
 				</div>
 				<div class="col-4">
-					<div class="dropdown">
-						<button class="btn btn-light dropdown-toggle" type="button"
-							id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Ordenar por</button>
-						<div class="dropdown-menu" aria-labelledby="triggerId">
-							<a class="dropdown-item" href="#">Precio descendiente</a> <a
-								class="dropdown-item" href="#">Precio ascendente</a> <a
-								class="dropdown-item" href="#">Marca</a>
-						</div>
-					</div>
+					 <form action="Controller?op=order" method="post">
+                        <select class="form-select w-100 mb-3" name="order" onchange="this.form.submit()">
+                            <option selected>Ordenar por</option>
+                            <option value="null">Sin orden</option>
+                            <option value="precio asc">Precio Ascendente</option>
+                            <option value="precio desc">Precio Descendente</option>
+                            <option value="marca">Marca</option>
+                        </select>
+                    </form>
 				</div>
 				<div class="col-4">
 					<a href="" class="display-2 text-decoration-none">&#9733;</a>
@@ -61,7 +57,6 @@
 						<div class="card">
 							<img class="card-img-top" src="${bici.foto}" alt="Title" />
 							<div class="card-body">
-								<h4 class="card-title">${bici.marca.nombre}</h4>
 								<p class="card-text">${bici.descripcion}</p>
 							</div>
 						</div>

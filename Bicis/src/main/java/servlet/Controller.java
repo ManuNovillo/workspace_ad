@@ -5,7 +5,8 @@ import java.sql.Connection;
 import java.util.List;
 
 import conexion.Conexion;
-import dao.DAO;
+import dao.DAOBici;
+import dao.DAOMarca;
 import entities.Bici;
 import entities.Marca;
 import jakarta.servlet.ServletException;
@@ -51,16 +52,13 @@ public class Controller extends HttpServlet {
 				
 				// Entregamos a la vista home estos datos en forma de objeto bajo el nombre key
 				// Cuidado con la key!!. En la home habra que utilizarla y llamarla IGUAL IGUAL...
-				List<Marca> marcas = DAO.getAll(Marca.class, con);
-				List<Bici> bicis = DAO.getAll(Bici.class, con);
-				for (Bici bici : bicis) {
-					bici.setMarca(DAO.getById(Marca.class, bici.ge, con))
-				}
-				System.out.println(bicis.getFirst().getMarca().getNombre());
+				List<Bici> bicis = new DAOBici().getBicis("%", "null", "%", con);
+				List<Marca> marcas = new DAOMarca().getMarcas(con);
 				session.setAttribute("marcas", marcas);
 				session.setAttribute("bicis", bicis);
 				request.getRequestDispatcher("home.jsp").forward(request, response);
-				break;			
+				break;		
+		
 		}
 
 	}
