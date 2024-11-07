@@ -57,7 +57,10 @@ public class Controller extends HttpServlet {
 				session.setAttribute("marcas", marcas);
 				session.setAttribute("bicis", bicis);
 				request.getRequestDispatcher("home.jsp").forward(request, response);
-				break;		
+				break;	
+			case "marca":
+				List<Bici> bicis = new DAOBici().getBicis(marca, op, op, con)
+				break;
 		
 		}
 

@@ -32,7 +32,9 @@
                         <select class="form-select w-100 mb-3" name="marca" onchange="this.form.submit()">
                             <option selected disabled>Elige marca</option>
                             <option value="%" selected>Todas</option>
-                            <option value="idmarca">Marca 1</option>
+                           	<c:forEach var="marca" items="${marcas}">
+                           		<option value="${marca.id}">${marca.nombre}</option>
+                           	</c:forEach>
                         </select>
                     </form>
 				</div>
