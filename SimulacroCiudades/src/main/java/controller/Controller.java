@@ -2,14 +2,19 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
 import conexion.Conexion;
+import daos.DAOCiudad;
+import daos.DAORuta;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import model.Ciudad;
+import model.Ruta;
 
 
 /**
@@ -34,15 +39,27 @@ public class Controller extends HttpServlet {
 		HttpSession session = request.getSession();
 		Connection con = null;
 		
-		con = (Connection)session.getAttribute("con");
+		con = (Connection) session.getAttribute("con");
 		if (con== null) {
 			con = Conexion.conecta();
 			session.setAttribute("con", con);
 		}
 		
+		List<Ciudad> ciudades;
+		List<Ruta> rutas;
 		String op = request.getParameter("op");
 		switch (op) {
-			
+		case "inicio":
+			ciudades = new DAOCiudad().getCiudadesConRutas(con);
+			session.setAttribute("ciudades", ciudades);
+			request.getRequestDispatcher("ciudades.jsp").forward(request, response);
+			break;
+		case "damerutas":
+			int ciudadId = Integer.parseInt(request.getParameter("ciudadId"));
+			rutas = new DAORuta().getRutasByCiudad(con, ciudadId);
+			session.setAttribute("rutas", rutas);
+			request.getRequestDispatcher("rutas.jsp").forward(request, response);
+			break;
 		}
 	}
 	
