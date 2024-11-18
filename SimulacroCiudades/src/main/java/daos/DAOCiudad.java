@@ -12,13 +12,14 @@ import model.Ciudad;
 public class DAOCiudad {
 	public List<Ciudad> getCiudades(Connection con) {
 		List<Ciudad> ciudades = new ArrayList<>();
-		String selectQuery = "SELECT nombre, link, imagen, descripcion " +
+		String selectQuery = "SELECT id, nombre, link, imagen, descripcion " +
 							 "FROM Ciudad";
 		try {
 			PreparedStatement statement = con.prepareStatement(selectQuery);
-			ResultSet result = statement.executeQuery(selectQuery);
+			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				Ciudad ciudad = new Ciudad();
+				ciudad.setId(result.getInt("id"));
 				ciudad.setNombre(result.getString("nombre"));
 				ciudad.setDescripcion(result.getString("descripcion"));
 				ciudad.setImagen(result.getString("imagen"));
@@ -35,14 +36,15 @@ public class DAOCiudad {
 	
 	public List<Ciudad> getCiudadesConRutas(Connection con) {
 		List<Ciudad> ciudades = new ArrayList<>();
-		String selectQuery = "SELECT c.nombre, c.link, c.imagen, c.descripcion " +
+		String selectQuery = "SELECT c.id, c.nombre, c.link, c.imagen, c.descripcion " +
 							 "FROM Ciudad c " +
 							 "WHERE c.id in (SELECT distinct r.ciudad FROM Ruta r)";
 		try {
 			PreparedStatement statement = con.prepareStatement(selectQuery);
-			ResultSet result = statement.executeQuery(selectQuery);
+			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				Ciudad ciudad = new Ciudad();
+				ciudad.setId(result.getInt("id"));
 				ciudad.setNombre(result.getString("nombre"));
 				ciudad.setDescripcion(result.getString("descripcion"));
 				ciudad.setImagen(result.getString("imagen"));

@@ -13,43 +13,23 @@ public class DAORuta {
 	
 	public List<Ruta> getRutasByCiudad(Connection con, int ciudadId) {
 		List<Ruta> rutas = new ArrayList<>();
-		String selectQuery = "SELECT nombre, link, foto, ciudad" +
-							 "FROM Ruta" +
+		String selectQuery = "SELECT id, nombre, descripcion, link, imagen, ciudad " +
+							 "FROM Ruta " +
 							 "WHERE ciudad = ?";
 		try {
 			PreparedStatement statement = con.prepareStatement(selectQuery);
 			statement.setInt(1, ciudadId);
-			ResultSet result = statement.executeQuery(selectQuery);
+			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				Ruta ruta = new Ruta();
-				ruta.setNombre(result.getString("nombre"));
-				ruta.setFoto(result.getString("foto"));
-				ruta.setLink(result.getString("link"));
-				ruta.setCiudad(result.getInt("ciudad"));
-				rutas.add(ruta);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-		return rutas;
-	}
-
-	public List<Ruta> getRutas(Connection con) {
-		// TODO Auto-generated method stub
-		List<Ruta> rutas = new ArrayList<>();
-		String selectQuery = "SELECT nombre, link, imagen, ciudad " +
-							 "FROM Ruta";
-		try {
-			PreparedStatement statement = con.prepareStatement(selectQuery);
-			ResultSet result = statement.executeQuery(selectQuery);
-			while (result.next()) {
-				Ruta ruta = new Ruta();
+				ruta.setId(result.getInt("id"));
+				ruta.setDescripcion(result.getString("descripcion"));
 				ruta.setNombre(result.getString("nombre"));
 				ruta.setFoto(result.getString("imagen"));
 				ruta.setLink(result.getString("link"));
 				ruta.setCiudad(result.getInt("ciudad"));
+				int media = new DAOPunto().getMedia(ruta.getId(), con);
+				ruta.setMedia(media);
 				rutas.add(ruta);
 			}
 		} catch (SQLException e) {

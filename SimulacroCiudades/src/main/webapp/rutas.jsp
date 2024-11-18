@@ -37,18 +37,19 @@
 					<div class="collapse navbar-collapse" id="collapsibleNavId">
 						<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 							<li class="nav-item"><a class="nav-link active fs-4"
-								href="#">Ciudades</a></li>
+								href="Controller?op=inicio">Ciudades</a></li>
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle active fs-4" href="#"
 								id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false">Rutas</a>
 								<div class="dropdown-menu" aria-labelledby="dropdownId">
-									<c:forEach var="ciudad" items="${ciudades}">
+									<c:forEach var="ciudad" items="${ciudadesConRutas}">
 										<a class="dropdown-item"
 											href="Controller?op=damerutas&ciudadId=${ciudad.id}">
 											${ciudad.nombre} </a>
 									</c:forEach>
-								</div></li>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -56,31 +57,32 @@
 		</header>
 		<main class="mt-3">
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row justify-content-center">
 					<c:forEach var="ruta" items="${rutas}">
 						<div class="col-lg-6 mb-3 d-flex">
 							<div class="card pb-5">
-								<a href="${ruta.link}" class="text-decoration-none">
-									<img class="card-img-top" src="${ruta.foto}" alt="Title" />
+								<a href="${ruta.link}" class="text-decoration-none"> <img
+									class="card-img-top" src="${ruta.foto}" alt="Title" />
 								</a>
-								<div class="card-body position-relative">
-									<h4 class="card-title">Title</h4>
-									<p class="card-text">Los protagonistas de una de las obras
-										maestras de la literatura universal, EI Quijote, te darán la
-										biar que no te debes perder, junto a su universidad, al Corral
-										de Comedias, a la plaza de los Santos Niños o al Palacio
-										Arzobispal.</p>
+								<div class="card-body">
+									<h4 class="card-title">${ruta.nombre}</h4>
+									<p class="card-text">${ruta.descripcion}</p>
+									<div>
+										<c:forEach var="i" begin="1" end="${ruta.media}">
+											<p class="d-inline">&#9733;</p>
+											<c:set var="i" value="i+1"></c:set>
+										</c:forEach>
+									</div>
 								</div>
 								<p class="text-center">
-									<span class="rating"> <a href=""
-										class="text-decoration-none">&#9733;</a> <a href=""
-										class="text-decoration-none">&#9733;</a> <a href=""
-										class="text-decoration-none">&#9733;</a> <a href=""
-										class="text-decoration-none">&#9733;</a> <a href=""
-										class="text-decoration-none">&#9733;</a>
+									<span class="rating"> 
+										<a href="Controller?op=puntuar&puntos=1&ruta=${ruta.id}" class="m-0">&#9733;</a> 
+										<a href="Controller?op=puntuar&puntos=2&ruta=${ruta.id}" class="m-0">&#9733;</a> 
+										<a href="Controller?op=puntuar&puntos=3&ruta=${ruta.id}" class="m-0">&#9733;</a> 
+										<a href="Controller?op=puntuar&puntos=4&ruta=${ruta.id}" class="m-0">&#9733;</a> 
+										<a href="Controller?op=puntuar&puntos=5&ruta=${ruta.id}" class="m-0">&#9733;</a>
 									</span>
 								</p>
-
 							</div>
 						</div>
 					</c:forEach>

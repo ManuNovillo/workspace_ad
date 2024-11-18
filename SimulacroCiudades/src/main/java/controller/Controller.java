@@ -6,6 +6,7 @@ import java.util.List;
 
 import conexion.Conexion;
 import daos.DAOCiudad;
+import daos.DAOPunto;
 import daos.DAORuta;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -45,20 +46,38 @@ public class Controller extends HttpServlet {
 			session.setAttribute("con", con);
 		}
 		
+		List<Ciudad> ciudadesConRutas;
 		List<Ciudad> ciudades;
 		List<Ruta> rutas;
 		String op = request.getParameter("op");
 		switch (op) {
 		case "inicio":
-			ciudades = new DAOCiudad().getCiudadesConRutas(con);
+			DAOCiudad daoCiudad = new DAOCiudad();
+			ciudadesConRutas = daoCiudad.getCiudadesConRutas(con);
+			ciudades = daoCiudad.getCiudades(con);
+			session.setAttribute("ciudadesConRutas", ciudadesConRutas);
 			session.setAttribute("ciudades", ciudades);
 			request.getRequestDispatcher("ciudades.jsp").forward(request, response);
 			break;
 		case "damerutas":
 			int ciudadId = Integer.parseInt(request.getParameter("ciudadId"));
 			rutas = new DAORuta().getRutasByCiudad(con, ciudadId);
+			rutas.forEach(ruta -> {
+				System.out.println(ruta);
+			});
+			if (rutas.isEmpty()) {
+				System.out.println("vacio");
+			}
+			session.setAttribute("ciudadId", ciudadId);
 			session.setAttribute("rutas", rutas);
 			request.getRequestDispatcher("rutas.jsp").forward(request, response);
+			break;
+		case "puntuar":
+			int puntos = Integer.parseInt(request.getParameter("puntos"));
+			int rutaId = Integer.parseInt(request.getParameter("ruta"));
+			new DAOPunto().addPuntos(puntos, rutaId, con);
+			int ciudad = (int) session.getAttribute("ciudadId");
+			request.getRequestDispatcher("Controller?op=damerutas&ciudadId=" + ciudad).forward(request, response);
 			break;
 		}
 	}

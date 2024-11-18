@@ -42,12 +42,13 @@
 								id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false">Rutas</a>
 								<div class="dropdown-menu" aria-labelledby="dropdownId">
-									<c:forEach var="ciudad" items="${ciudades}">
+									<c:forEach var="ciudad" items="${ciudadesConRutas}">
 										<a class="dropdown-item" href="Controller?op=damerutas&ciudadId=${ciudad.id}">
 											${ciudad.nombre}
 										</a>
 									</c:forEach>
-								</div></li>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -55,10 +56,10 @@
 		</header>
 		<main class="mt-3">
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row justify-content-center">
 					<c:forEach var="ciudad" items="${ciudades}">
-						<div class="col-lg-6 mb-3 d-flex">
-							<div class="card pb-5">
+						<div class="col-lg-6 mb-3">
+							<div class="card pb-5 h-100">
 								<a href="${ciudad.link}" class="text-decoration-none"> <img
 									class="card-img-top" src="${ciudad.imagen}" alt="Title" />
 								</a>
@@ -67,7 +68,7 @@
 									<p class="card-text">${ciudad.descripcion}</p>
 								</div>
 								<p>
-									<img src="img/mapa.png" width="120" alt=""
+									<img src="img/mapa.png" width="100" alt=""
 										class="position-absolute end-0 bottom-0">
 								</p>
 							</div>
