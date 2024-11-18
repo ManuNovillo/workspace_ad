@@ -7,6 +7,7 @@ public class Ciudad {
 	private String descripcion;
 	private String imagen;
 	private String link;
+	private String mapa;
 
 	public int getId() {
 		return id;
@@ -46,6 +47,14 @@ public class Ciudad {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+
+	public String getMapa() {
+		return mapa;
+	}
+
+	public void setMapa(String mapa) {
+		this.mapa = mapa;
 	}
 
 }

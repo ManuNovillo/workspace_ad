@@ -57,6 +57,7 @@
 		</header>
 		<main class="mt-3">
 			<div class="container-fluid">
+			<h2 class="bg-primary text-center text-white py-3">${ciudad.nombre}</h2>
 				<div class="row justify-content-center">
 					<c:forEach var="ruta" items="${rutas}">
 						<div class="col-lg-6 mb-3 d-flex">

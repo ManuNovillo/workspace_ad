@@ -34,7 +34,7 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="collapsibleNavId">
-						<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+						<ul class="navbar-nav ms-auto me-auto mt-2 mt-lg-0">
 							<li class="nav-item"><a class="nav-link active fs-4"
 								href="#">Ciudades</a></li>
 							<li class="nav-item dropdown"><a
@@ -68,7 +68,7 @@
 									<p class="card-text">${ciudad.descripcion}</p>
 								</div>
 								<p>
-									<img src="img/mapa.png" width="100" alt=""
+									<img src="${ciudad.mapa}" width="100" alt=""
 										class="position-absolute end-0 bottom-0">
 								</p>
 							</div>

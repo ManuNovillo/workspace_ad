@@ -61,6 +61,8 @@ public class Controller extends HttpServlet {
 			break;
 		case "damerutas":
 			int ciudadId = Integer.parseInt(request.getParameter("ciudadId"));
+			Ciudad ciudad = new DAOCiudad().getCiudadById(ciudadId, con);
+			session.setAttribute("ciudad", ciudad);
 			rutas = new DAORuta().getRutasByCiudad(con, ciudadId);
 			rutas.forEach(ruta -> {
 				System.out.println(ruta);
@@ -76,8 +78,8 @@ public class Controller extends HttpServlet {
 			int puntos = Integer.parseInt(request.getParameter("puntos"));
 			int rutaId = Integer.parseInt(request.getParameter("ruta"));
 			new DAOPunto().addPuntos(puntos, rutaId, con);
-			int ciudad = (int) session.getAttribute("ciudadId");
-			request.getRequestDispatcher("Controller?op=damerutas&ciudadId=" + ciudad).forward(request, response);
+			int ciudadid = (int) session.getAttribute("ciudadId");
+			request.getRequestDispatcher("Controller?op=damerutas&ciudadId=" + ciudadid).forward(request, response);
 			break;
 		}
 	}

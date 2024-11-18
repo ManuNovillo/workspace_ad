@@ -12,7 +12,7 @@ import model.Ciudad;
 public class DAOCiudad {
 	public List<Ciudad> getCiudades(Connection con) {
 		List<Ciudad> ciudades = new ArrayList<>();
-		String selectQuery = "SELECT id, nombre, link, imagen, descripcion " +
+		String selectQuery = "SELECT * " +
 							 "FROM Ciudad";
 		try {
 			PreparedStatement statement = con.prepareStatement(selectQuery);
@@ -24,6 +24,7 @@ public class DAOCiudad {
 				ciudad.setDescripcion(result.getString("descripcion"));
 				ciudad.setImagen(result.getString("imagen"));
 				ciudad.setLink(result.getString("link"));
+				ciudad.setMapa(result.getString("mapa"));
 				ciudades.add(ciudad);
 			}
 		} catch (SQLException e) {
@@ -36,7 +37,7 @@ public class DAOCiudad {
 	
 	public List<Ciudad> getCiudadesConRutas(Connection con) {
 		List<Ciudad> ciudades = new ArrayList<>();
-		String selectQuery = "SELECT c.id, c.nombre, c.link, c.imagen, c.descripcion " +
+		String selectQuery = "SELECT * " +
 							 "FROM Ciudad c " +
 							 "WHERE c.id in (SELECT distinct r.ciudad FROM Ruta r)";
 		try {
@@ -49,6 +50,7 @@ public class DAOCiudad {
 				ciudad.setDescripcion(result.getString("descripcion"));
 				ciudad.setImagen(result.getString("imagen"));
 				ciudad.setLink(result.getString("link"));
+				ciudad.setMapa(result.getString("mapa"));
 				ciudades.add(ciudad);
 			}
 		} catch (SQLException e) {
@@ -57,5 +59,32 @@ public class DAOCiudad {
 			e.printStackTrace();
 		}
 		return ciudades;
+	}
+
+	public Ciudad getCiudadById(int ciudadId, Connection con) {
+		// TODO Auto-generated method stub
+		Ciudad ciudad = null;
+		String select = "SELECT * " +
+				 		"FROM Ciudad " + 
+				 		"WHERE id = ?";
+		try {
+			PreparedStatement ps = con.prepareStatement(select);
+			ps.setInt(1, ciudadId);
+			ResultSet result = ps.executeQuery();
+			if (result.next()) {
+				ciudad = new Ciudad();
+				ciudad.setId(ciudadId);
+				ciudad.setNombre(result.getString("nombre"));
+				ciudad.setDescripcion(result.getString("descripcion"));
+				ciudad.setImagen(result.getString("imagen"));
+				ciudad.setLink(result.getString("link"));
+				ciudad.setMapa(result.getString("mapa"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return ciudad;
 	}
 }
