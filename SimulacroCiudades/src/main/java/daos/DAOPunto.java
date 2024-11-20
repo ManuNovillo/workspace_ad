@@ -13,11 +13,12 @@ public class DAOPunto {
 							 "FROM Punto " +
 							 "WHERE ruta = ?";
 		try {
-			PreparedStatement statement = con.prepareStatement(selectQuery);
-			statement.setInt(1, rutaId);
-			ResultSet result = statement.executeQuery();
+			PreparedStatement ps = con.prepareStatement(selectQuery);
+			ps.setInt(1, rutaId);
+			ResultSet result = ps.executeQuery();
 			result.next();
 			media = result.getInt("media");
+			ps.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
@@ -29,10 +30,11 @@ public class DAOPunto {
 	public void addPuntos(int puntos, int rutaId, Connection con) {
 		String insert = "INSERT INTO Punto(puntos, ruta) values (?, ?)";
 		try {
-			PreparedStatement statement = con.prepareStatement(insert);
-			statement.setInt(1, puntos);
-			statement.setInt(2, rutaId);
-			statement.executeUpdate();
+			PreparedStatement ps = con.prepareStatement(insert);
+			ps.setInt(1, puntos);
+			ps.setInt(2, rutaId);
+			ps.executeUpdate();
+			ps.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

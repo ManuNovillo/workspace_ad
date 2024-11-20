@@ -15,8 +15,8 @@ public class DAOCiudad {
 		String selectQuery = "SELECT * " +
 							 "FROM Ciudad";
 		try {
-			PreparedStatement statement = con.prepareStatement(selectQuery);
-			ResultSet result = statement.executeQuery();
+			PreparedStatement ps = con.prepareStatement(selectQuery);
+			ResultSet result = ps.executeQuery();
 			while (result.next()) {
 				Ciudad ciudad = new Ciudad();
 				ciudad.setId(result.getInt("id"));
@@ -27,6 +27,7 @@ public class DAOCiudad {
 				ciudad.setMapa(result.getString("mapa"));
 				ciudades.add(ciudad);
 			}
+			ps.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
@@ -41,8 +42,8 @@ public class DAOCiudad {
 							 "FROM Ciudad c " +
 							 "WHERE c.id in (SELECT distinct r.ciudad FROM Ruta r)";
 		try {
-			PreparedStatement statement = con.prepareStatement(selectQuery);
-			ResultSet result = statement.executeQuery();
+			PreparedStatement ps = con.prepareStatement(selectQuery);
+			ResultSet result = ps.executeQuery();
 			while (result.next()) {
 				Ciudad ciudad = new Ciudad();
 				ciudad.setId(result.getInt("id"));
@@ -53,6 +54,7 @@ public class DAOCiudad {
 				ciudad.setMapa(result.getString("mapa"));
 				ciudades.add(ciudad);
 			}
+			ps.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

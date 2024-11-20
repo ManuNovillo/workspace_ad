@@ -64,9 +64,6 @@ public class Controller extends HttpServlet {
 			Ciudad ciudad = new DAOCiudad().getCiudadById(ciudadId, con);
 			session.setAttribute("ciudad", ciudad);
 			rutas = new DAORuta().getRutasByCiudad(con, ciudadId);
-			rutas.forEach(ruta -> {
-				System.out.println(ruta);
-			});
 			if (rutas.isEmpty()) {
 				System.out.println("vacio");
 			}

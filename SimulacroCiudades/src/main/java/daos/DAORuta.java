@@ -17,9 +17,9 @@ public class DAORuta {
 							 "FROM Ruta " +
 							 "WHERE ciudad = ?";
 		try {
-			PreparedStatement statement = con.prepareStatement(selectQuery);
-			statement.setInt(1, ciudadId);
-			ResultSet result = statement.executeQuery();
+			PreparedStatement ps = con.prepareStatement(selectQuery);
+			ps.setInt(1, ciudadId);
+			ResultSet result = ps.executeQuery();
 			while (result.next()) {
 				Ruta ruta = new Ruta();
 				ruta.setId(result.getInt("id"));
@@ -32,6 +32,7 @@ public class DAORuta {
 				ruta.setMedia(media);
 				rutas.add(ruta);
 			}
+			ps.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
