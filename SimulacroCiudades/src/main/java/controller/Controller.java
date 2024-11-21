@@ -64,9 +64,6 @@ public class Controller extends HttpServlet {
 			Ciudad ciudad = new DAOCiudad().getCiudadById(ciudadId, con);
 			session.setAttribute("ciudad", ciudad);
 			rutas = new DAORuta().getRutasByCiudad(con, ciudadId);
-			if (rutas.isEmpty()) {
-				System.out.println("vacio");
-			}
 			session.setAttribute("ciudadId", ciudadId);
 			session.setAttribute("rutas", rutas);
 			request.getRequestDispatcher("rutas.jsp").forward(request, response);
@@ -74,9 +71,11 @@ public class Controller extends HttpServlet {
 		case "puntuar":
 			int puntos = Integer.parseInt(request.getParameter("puntos"));
 			int rutaId = Integer.parseInt(request.getParameter("ruta"));
+			int idciudad = Integer.parseInt(session.getAttribute("ciudadId").toString());
 			new DAOPunto().addPuntos(puntos, rutaId, con);
-			int ciudadid = (int) session.getAttribute("ciudadId");
-			request.getRequestDispatcher("Controller?op=damerutas&ciudadId=" + ciudadid).forward(request, response);
+			rutas = new DAORuta().getRutasByCiudad(con, idciudad);
+			session.setAttribute("rutas", rutas);
+			request.getRequestDispatcher("rutas.jsp").forward(request, response);
 			break;
 		}
 	}
