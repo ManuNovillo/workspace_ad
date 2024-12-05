@@ -11,3 +11,11 @@
  .rating a:hover ~ a {
     color: #888;
  }
+ 
+ .bg-rosa {
+ 	background-color: #e51b4d;
+ }
+ 
+ .text-rosa {
+ 	color: #e51b4d;
+ }
