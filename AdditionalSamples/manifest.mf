@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: net.azarquiel.manuel
+OpenIDE-Module-Localizing-Bundle: net/azarquiel/manuel/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
