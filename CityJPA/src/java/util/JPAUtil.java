@@ -25,4 +25,3 @@ public class JPAUtil {
         return emf;
     }
 }
-

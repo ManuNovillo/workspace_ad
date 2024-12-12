@@ -17,8 +17,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 /**
  *
@@ -54,6 +56,8 @@ public class Ruta implements Serializable {
     private Ciudad ciudad;
     @OneToMany(mappedBy = "ruta")
     private List<Punto> puntoList;
+    @Transient
+    private int media;
 
     public Ruta() {
     }
@@ -117,6 +121,14 @@ public class Ruta implements Serializable {
 
     public void setPuntoList(List<Punto> puntoList) {
         this.puntoList = puntoList;
+    }
+    
+    public int getMedia() {
+        return media;
+    }
+    
+    public void setMedia(int media) {
+        this.media = media;
     }
 
     @Override

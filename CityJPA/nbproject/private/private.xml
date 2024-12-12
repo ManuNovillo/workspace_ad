@@ -4,10 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/util/JPAUtil.java</file>
+            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/entities/Ruta.java</file>
+            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/web/rutas.jsp</file>
             <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/entities/Ciudad.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/conf/persistence.xml</file>
             <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/entities/Punto.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/Prueba.java</file>
+            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/servlet/Controller.java</file>
+            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/web/ciudades.jsp</file>
         </group>
     </open-files>
 </project-private>
