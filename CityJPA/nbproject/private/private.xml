@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/util/JPAUtil.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/entities/Ruta.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/web/rutas.jsp</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/entities/Ciudad.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/entities/Punto.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/src/java/servlet/Controller.java</file>
-            <file>file:/C:/Users/diurno/workspace_ad/CityJPA/web/ciudades.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
