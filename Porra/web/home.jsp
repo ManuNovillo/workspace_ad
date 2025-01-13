@@ -30,7 +30,16 @@
                     <img src="img/logoliga.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-3 me-3 text-end">
-                    <button class="btn btn-success">Login</button>
+			<c:choose>
+				<c:when test="${usuario == null}">
+				    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
+				</c:when>
+				<c:otherwise>
+					<div class="col-md-4">
+						
+					</div>
+				</c:otherwise>
+			</c:choose>
                 </div>
             </div>
         </header>
@@ -71,7 +80,65 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+ <div class="modal fade" id="modalLogin" tabindex="-1" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">User Login</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="Controller?op=login" method="post">
+                        <div class="mb-3">
+                            <label for="" class="form-label">DNI</label>
+                            <input type="text" class="form-control" name="dni" id="" aria-describedby="emailHelpId"
+                                placeholder="12345678D" />
+                            <small><a href="" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSignin">Registrarse</a></small>
+                        </div>
 
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSignin" tabindex="-1" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Sign in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="Controller?op=signin" method="post">
+                        <div class="mb-3">
+                            <label for="" class="form-label">DNI</label>
+                            <input type="text" class="form-control" name="dni" id="" aria-describedby="emailHelpId"
+                                placeholder="12345678D" />
+                            <label for="" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" id="" aria-describedby="emailHelpId"
+                                placeholder="perico" />
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+        const myModal = new bootstrap.Modal(
+            document.getElementById("modalLogin"),
+            options,
+        );
+    </script>
 </body>
 
 </html>
