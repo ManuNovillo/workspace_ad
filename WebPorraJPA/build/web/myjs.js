@@ -15,7 +15,6 @@ function onshowapostar() {
             const partido = button.getAttribute('data-bs-partido')
             const local = button.getAttribute('data-bs-local')
             const visitante = button.getAttribute('data-bs-visitante')
-
             modalApuesta.querySelector('h5').textContent = local + ' - ' + visitante
             modalApuesta.querySelector('form').setAttribute('action', 'Controller?op=apuesta&partido=' + partido)
         })
