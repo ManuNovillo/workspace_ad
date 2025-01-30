@@ -89,6 +89,7 @@ public class Movie implements Serializable {
 
 	public void setTrama(String trama) {
 		this.trama = trama;
+
 	}
 
 	public List<Person> getPersonList() {
@@ -123,5 +124,4 @@ public class Movie implements Serializable {
 	public String toString() {
 		return "model.Movie[ id=" + id + " ]";
 	}
-	
 }

@@ -18,6 +18,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -52,8 +53,18 @@ public class Person implements Serializable {
 	private List<Movie> movieList;
 	@OneToMany(mappedBy = "idperson")
 	private List<Rating> ratingList;
+	@Transient
+	private int media;
 
 	public Person() {
+	}
+
+	public int getMedia() {
+		return media;
+	}
+
+	public void setMedia(int media) {
+		this.media =media;
 	}
 
 	public Person(Integer id) {
@@ -77,7 +88,7 @@ public class Person implements Serializable {
 	}
 
 	public String getFoto() {
-		return foto;
+		return "https://image.tmdb.org/t/p/w500" + foto;
 	}
 
 	public void setFoto(String foto) {

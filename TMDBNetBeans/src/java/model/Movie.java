@@ -91,7 +91,7 @@ public class Movie implements Serializable {
 	}
 
 	public String getPoster() {
-		return poster;
+		return "https://image.tmdb.org/t/p/w500" + poster;
 	}
 
 	public void setPoster(String poster) {
