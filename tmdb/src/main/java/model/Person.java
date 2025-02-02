@@ -4,15 +4,15 @@ package model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -24,23 +24,27 @@ public class Person implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-        @Basic(optional = false)
-        @Column(name = "ID")
+	@Basic(optional = false)
+	@Column(name = "ID")
 	private Integer id;
 	@Column(name = "NOMBRE")
 	private String nombre;
 	@Column(name = "FOTO")
 	private String foto;
-	// @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
 	@Column(name = "POPULARIDAD")
 	private BigDecimal popularidad;
 	@ManyToMany(mappedBy = "personList")
 	private List<Movie> movieList;
 	@OneToMany(mappedBy = "idperson")
 	private List<Rating> ratingList;
+	@Transient
+	private int media;
 
-	public Person() {
+	public void setMedia(int media) {
+		this.media = media;
 	}
+
+	public Person() {}
 
 	public Person(Integer id) {
 		this.id = id;
@@ -92,6 +96,19 @@ public class Person implements Serializable {
 
 	public void setRatingList(List<Rating> ratingList) {
 		this.ratingList = ratingList;
+	}
+
+	public void setMedia() {
+		int suma = 0;
+		for (Rating rating : ratingList) {
+			suma += rating.getPuntos();
+		}
+		int tamano = ratingList.size();
+		media = tamano == 0? 0 : suma/tamano;
+	}
+
+	public int getMedia() {
+		return media;
 	}
 
 	@Override

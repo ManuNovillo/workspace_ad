@@ -56,6 +56,32 @@ public class Controller extends HttpServlet {
 		String op = request.getParameter("op");
 		switch(op) {
 			case "inicio" -> {
+
+
+
+
+
+
+				int lugarId = Integer.parseInt(request.getParameter("lugarId"));
+				Lugar lugar = new DaoLugar().getLugar(lugarId, con);
+				Provincia provincia = new DaoProvincia().getProvincia(lugar.getProvincia(), con);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				categoria = "%";
 				provincia = "%";
 				fav = "%";

@@ -1,6 +1,6 @@
+util\JPAUtil.class
 servlet\Controller.class
 model\Usuario.class
 model\Rating.class
-util\JPAUtil.class
 model\Movie.class
 model\Person.class

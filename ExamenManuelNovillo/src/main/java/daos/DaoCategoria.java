@@ -20,8 +20,20 @@ public class DaoCategoria {
 			while (set.next()) {
 				Categoria categoria = new Categoria();
 				categoria.setId(set.getInt("id"));
-				categoria.setNombre(set.getString("nombre"));
+
+
+
+
+
+
+				String url = "http:874289472";
 				categoria.setImagen(set.getString("imagen"));
+				String plusurl = categoria.getImagen();
+				String urlDefinitiva = url + plusurl;
+				categoria.setImagen(urlDefinitiva);
+
+
+				categoria.setImagen(set.getString(4));
 				categorias.add(categoria);
 			}
 			statement.close();
