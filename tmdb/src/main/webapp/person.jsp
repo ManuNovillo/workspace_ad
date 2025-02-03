@@ -44,8 +44,10 @@
                             </button>
                         </c:when>
                         <c:otherwise>
-                            <p class="text-white d-inline">Welcome ${usuario.nombre}</p>
-                            <a href="Controller?op=logout&pagina=person" class="btn btn-outline-success my-2 my-sm-0">Logout</a>
+                            <div class="d-flex align-items-center ms-auto">
+                                 <p class="text-white mb-0 me-2">Welcome ${usuario.nombre}</p>
+                                <a href="Controller?op=logout&pagina=person" class="btn btn-outline-success">Logout</a>
+                            </div>
                         </c:otherwise>
                     </c:choose>
                 </div>
