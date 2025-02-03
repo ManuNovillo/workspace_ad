@@ -148,7 +148,7 @@
     <div class="position-fixed top-50 start-50 translate-middle">
     	<div id="loginResult" class="toast rounded-pill border-2 border-danger" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="2000">
             <div class="toast-body bg-light text-danger text-center rounded-pill">
-                <h5>${msg}</h5>
+                <h5>${mensaje}</h5>
             </div>
     	</div>
     </div>

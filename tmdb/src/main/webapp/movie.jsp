@@ -45,7 +45,7 @@
                         </c:when>
                         <c:otherwise>
                             <p class="text-white d-inline">Welcome ${usuario.nombre}</p>
-                            <a href="Controller?op=logout&pagina=person" class="btn btn-outline-success my-2 my-sm-0">Logout</a>
+                            <a href="Controller?op=logout&pagina=movie" class="btn btn-outline-success my-2 my-sm-0">Logout</a>
                         </c:otherwise>
                     </c:choose>
                 </div>
@@ -92,7 +92,7 @@
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="Controller?op=login&pagina=person" method="post">
+                <form action="Controller?op=login&pagina=movie" method="post">
                     <div class="modal-body">
                         <input type="text" name="dni" placeholder="DNI">
                         <p class="form-text text-muted mt-2" data-bs-toggle="modal" data-bs-target="#modalSignIn">¿No
@@ -120,7 +120,7 @@
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="Controller?op=register&pagina=person" method="post">
+                <form action="Controller?op=register&pagina=movie" method="post">
                     <div class="modal-body">
                         <input type="text" name="dni" placeholder="DNI">
                         <input type="text" name="nombre" placeholder="Nombre">

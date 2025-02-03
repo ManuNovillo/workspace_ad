@@ -64,7 +64,7 @@ public class Controller extends HttpServlet {
                 usuario = em.find(Usuario.class, dni);
                 if (usuario == null) {
                     mensaje = "Datos incorrectos";
-                    session.setAttribute("mensaje", mensaje);
+                    request.setAttribute("mensaje", mensaje);
                 }
                 session.setAttribute("usuario", usuario);
                 request.getRequestDispatcher(paginaActual + ".jsp").forward(request, response);
@@ -85,7 +85,7 @@ public class Controller extends HttpServlet {
                     session.setAttribute("usuario", usuario);
                 } else {
                     mensaje = "Este dni ya existe";
-                    session.setAttribute("mensaje", mensaje);
+                    request.setAttribute("mensaje", mensaje);
                 }
                 request.getRequestDispatcher(paginaActual + ".jsp").forward(request, response);
                 break;
