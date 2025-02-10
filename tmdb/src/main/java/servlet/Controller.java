@@ -61,11 +61,14 @@ public class Controller extends HttpServlet {
                 dni = request.getParameter("dni");
                 nombre = request.getParameter("nombre");
                 paginaActual = request.getParameter("pagina");
+                if (dni == null) System.out.println("ES NULL");
                 usuario = em.find(Usuario.class, dni);
                 if (usuario == null) {
                     mensaje = "Datos incorrectos";
-                    request.setAttribute("mensaje", mensaje);
+                } else {
+                    mensaje = "LOGEADO";
                 }
+                request.setAttribute("mensaje", mensaje);
                 session.setAttribute("usuario", usuario);
                 request.getRequestDispatcher(paginaActual + ".jsp").forward(request, response);
                 break;
