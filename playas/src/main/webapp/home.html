@@ -15,17 +15,25 @@
 <body>
     <div class="container">
         <header>
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-4">
                     <img src="img/logo.png" alt="">
                 </div>
-                <div class="col-8">
-                    <button class="btn btn-danger">
+                <div class="col-8 text-end">
+                    <button class="btn btn-danger mb-3">
                         Login
                     </button>
-                    <form action="Controller?op=" method="post">
+                    <form action="Controller?op=" method="post" onchange="this.form.submit()">
                         <div class="row">
-                            
+                            <div class="col-4">
+                                <select name="comunidad" class="w-100"></select>
+                            </div>
+                            <div class="col-4">
+                                <select name="comunidad" class="w-100"></select>
+                            </div>
+                            <div class="col-4">
+                                <select name="comunidad" class="w-100"></select>
+                            </div>
                         </div>
                     </form>
                 </div>
