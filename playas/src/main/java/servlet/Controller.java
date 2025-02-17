@@ -23,7 +23,7 @@ public class Controller extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        EntityManager em = null;
+        EntityManager em;
 
         em = (EntityManager) session.getAttribute("em");
 
@@ -33,7 +33,7 @@ public class Controller extends HttpServlet {
         }
 
         String op = request.getParameter("op");
-        switch (op) {
+         switch (op) {
             case "inicio": {
                 request.getRequestDispatcher("home.jsp").forward(request, response);
                 break;
@@ -44,5 +44,4 @@ public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
-
 }
