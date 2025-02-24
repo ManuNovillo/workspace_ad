@@ -63,9 +63,15 @@ public class Playa implements Serializable {
 		}
 		double suma = 0;
 		for (Punto punto : puntos) {
-			suma += punto.getPuntos();
+			if(punto.getPuntos()==null){
+				
+			}
+			else{
+			suma += punto.getPuntos();}
+			
 		}
 		media = (int) Math.round(suma / tamano);
+		System.out.println("Media: " + media);
 		return media;
 	}
     public Playa() {
