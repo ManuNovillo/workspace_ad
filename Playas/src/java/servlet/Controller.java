@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		EntityManager em;
-
+		String msg = "";
 		em = (EntityManager) session.getAttribute("em");
 
 		if (em == null) {
@@ -96,8 +96,6 @@ public class Controller extends HttpServlet {
 					t.begin();
 					em.persist(usuario);
 					t.commit();
-					/*                     em.refresh(usuario); */
-					System.out.println("Usuario creado: " + usuario.getId());
 				}
 				session.setAttribute("usuario", usuario);
 				request.getRequestDispatcher("home.jsp").forward(request, response);
