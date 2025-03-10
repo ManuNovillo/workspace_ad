@@ -1,9 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package net.azarquiel.japoapi.model;
 
-import jakarta.persistence.*;
-
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 
 /**
  *
@@ -12,119 +29,127 @@ import java.util.List;
 @Entity
 @Table(name = "PLATO")
 @NamedQueries({
-        @NamedQuery(name = "Plato.findAll", query = "SELECT p FROM Plato p")
-        , @NamedQuery(name = "Plato.findById", query = "SELECT p FROM Plato p WHERE p.id = :id")
-        , @NamedQuery(name = "Plato.findByNombre", query = "SELECT p FROM Plato p WHERE p.nombre = :nombre")
-        , @NamedQuery(name = "Plato.findByFoto", query = "SELECT p FROM Plato p WHERE p.foto = :foto")
-        , @NamedQuery(name = "Plato.findByPrecio", query = "SELECT p FROM Plato p WHERE p.precio = :precio")})
+	@NamedQuery(name = "Plato.findAll", query = "SELECT p FROM Plato p")
+	, @NamedQuery(name = "Plato.findById", query = "SELECT p FROM Plato p WHERE p.id = :id")
+	, @NamedQuery(name = "Plato.findByNombre", query = "SELECT p FROM Plato p WHERE p.nombre = :nombre")
+	, @NamedQuery(name = "Plato.findByFoto", query = "SELECT p FROM Plato p WHERE p.foto = :foto")
+	, @NamedQuery(name = "Plato.findByPrecio", query = "SELECT p FROM Plato p WHERE p.precio = :precio")})
 public class Plato implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "ID")
-    private Integer id;
-    @Column(name = "NOMBRE")
-    private String nombre;
-    @Column(name = "FOTO")
-    private String foto;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-    @Column(name = "PRECIO")
-    private Float precio;
-    @ManyToMany(mappedBy = "platoList")
-    private List<Alergeno> alergenoList;
-    @ManyToMany(mappedBy = "platoList")
-    private List<Pedido> pedidoList;
-    @JoinColumn(name = "CATEGORIA", referencedColumnName = "ID")
-    @ManyToOne
-    private Categoria categoria;
+	private static final long serialVersionUID = 1L;
+	@Id
+	@Basic(optional = false)
+	@Column(name = "ID")
+	private Short id;
 
-    public Plato() {
-    }
+	@Column(name = "NOMBRE")
+	private String nombre;
 
-    public Plato(Integer id) {
-        this.id = id;
-    }
+	@Column(name = "FOTO")
+	private String foto;
 
-    public Integer getId() {
-        return id;
-    }
+	@Column(name = "PRECIO")
+	private BigDecimal precio;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	@ManyToMany(mappedBy = "platoList")
+	@JsonIgnore
+	private List<Alergeno> alergenoList;
 
-    public String getNombre() {
-        return nombre;
-    }
+	@ManyToMany(mappedBy = "platoList")
+	@JsonIgnore
+	private List<Pedido> pedidoList;
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+	@JoinColumn(name = "CATEGORIA", referencedColumnName = "ID")
+	@ManyToOne
+	@JsonBackReference
+	private Categoria categoria;
 
-    public String getFoto() {
-        return foto;
-    }
+	public Plato() {
+	}
 
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
+	public Plato(Short id) {
+		this.id = id;
+	}
 
-    public Float getPrecio() {
-        return precio;
-    }
+	public Short getId() {
+		return id;
+	}
 
-    public void setPrecio(Float precio) {
-        this.precio = precio;
-    }
+	public void setId(Short id) {
+		this.id = id;
+	}
 
-    public List<Alergeno> getAlergenoList() {
-        return alergenoList;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public void setAlergenoList(List<Alergeno> alergenoList) {
-        this.alergenoList = alergenoList;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public List<Pedido> getPedidoList() {
-        return pedidoList;
-    }
+	public String getFoto() {
+		return foto;
+	}
 
-    public void setPedidoList(List<Pedido> pedidoList) {
-        this.pedidoList = pedidoList;
-    }
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
+	public BigDecimal getPrecio() {
+		return precio;
+	}
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+	public void setPrecio(BigDecimal precio) {
+		this.precio = precio;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+	public List<Alergeno> getAlergenoList() {
+		return alergenoList;
+	}
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Plato)) {
-            return false;
-        }
-        Plato other = (Plato) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+	public void setAlergenoList(List<Alergeno> alergenoList) {
+		this.alergenoList = alergenoList;
+	}
 
-    @Override
-    public String toString() {
-        return "model.Plato[ id=" + id + " ]";
-    }
+	public List<Pedido> getPedidoList() {
+		return pedidoList;
+	}
+
+	public void setPedidoList(List<Pedido> pedidoList) {
+		this.pedidoList = pedidoList;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 0;
+		hash += (id != null ? id.hashCode() : 0);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		// TODO: Warning - this method won't work in the case the id fields are not set
+		if (!(object instanceof Plato)) {
+			return false;
+		}
+		Plato other = (Plato) object;
+		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "model.Plato[ id=" + id + " ]";
+	}
 
 }
